@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+
+        <b:container fluid="true">
+            <b:jumbotron transient="Gravar Livro">
+                <h:form id="form_livro">
+                    <p:messages style="color: crimson;" closable="true">
+                        <p:panel menuTitle="Gravar Livro" header="Livro">
+                            <p:panelGrid columns="8">
+                                <p:column headerText="Livro:">
+                                    <br/>
+                                    <b:label text="Livro:"/> <b:inputText id="livro_nome" required="true" 
+                                                                          requiredMessage="Favor inserir Livro" 
+                                                                          value="#{livroMB.livro}"/>
+                                </p:column>
+                                <br/>
+                                <p:column headerText="Autor:">
+                                    <br/>
+                                    <b:label text="Autor:"/> <b:inputText id="livro_autor" required="true" 
+                                                                          requiredMessage="Favor inserir autor"
+                                                                          value="#{livroMB.autor}"/>
+
+                                </p:column>
+                                <br/>
+                                <p:column headerText="Preço:">
+                                    <br/>
+                                    <b:label text="Preço:"/> <b:inputText id="livro_preco" required="true" 
+                                                                          requiredMessage="Favor inserir Preço"
+                                                                          value="#{livroMB.preco}"/>
+                                </p:column>
+                                <br/>
+                                <p:column>
+                                    <br/>
+                                    <b:commandButton value="Gravar" action="#{livroMB.add_livro()}" onsuccess="window.alert('Livro criado');"/>
+                                </p:column>
+                                <br/>
+                            </p:panelGrid>
+                        </p:panel>
+                    </p:messages>
+                </h:form>
+            </b:jumbotron>
+        </b:container>
+
+    </h:body>
+</html>
